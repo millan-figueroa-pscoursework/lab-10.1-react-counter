@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+body {
+  display: flex;
+  place-items: center;
+}
