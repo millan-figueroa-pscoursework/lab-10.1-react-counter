@@ -1,15 +1,31 @@
-# React Counter with useEffect
+#### Lab 10.1: React Counter
 
-## Scenario
+# Advanced Counter App
 
-You have been tasked to build an advanced counter application. This project will challenge you to go beyond simple state updates by requiring you to manage multiple state dependencies, implement side effects using the useEffect hook (including proper cleanup), and handle more complex state update logic. The goal is to solidify your understanding of useState and useEffect in a practical context, focusing on how they work together to create interactive and responsive components.
+## Overview
 
-## Learning Objectives
+This is a small React + TypeScript project that features an advanced counter with interactive functionality, history tracking, autosaving, and keyboard shortcuts.<br>
 
-Upon successful completion of this lab, you will be able to:<br>
+The counter allows users to increment or decrement a value, view a history of previous counts, adjust the step size, and automatically save progress to the browser’s local storage.
 
-Implement and manage multiple pieces of state within a single component using useState.
-Utilize the useEffect hook to perform side effects in response to state changes.
-Implement proper cleanup functions within useEffect to prevent memory leaks or unexpected behavior.
-Write state update logic that correctly handles dependencies and previous state.
-Apply your knowledge to build a feature-rich counter with history tracking, auto-save, keyboard interactions, and a reset mechanism.
+## Features
+
+- Display and update the current count
+- Increment and decrement buttons
+- Adjustable step value
+- History of all count changes
+- Persistent count and step values (saved to localStorage)
+- Auto-save with cleanup
+- Reset button to clear the counter and history
+
+## Keyboard controls:
+
+- ArrowUp → Increment
+- ArrowDown → Decrement
+
+## Tech Stack
+
+- React (with Vite)
+- TypeScript
+- Tailwind CSS for styling
+- LocalStorage API for persistence

@@ -118,9 +118,6 @@ const AdvancedCounter: React.FC = () => {
           />
         </div>
 
-        {/* saved status placeholder */}
-        <p className="italic text-sm text-green-600 mb-6">Changes saved.</p>
-
         <h3 className="text-left font-semibold border-t border-neutral-700 pt-4">
           Count History:
         </h3>
