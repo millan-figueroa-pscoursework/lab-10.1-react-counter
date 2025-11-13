@@ -33,14 +33,35 @@ const AdvancedCounter: React.FC = () => {
 
   // debounced auto-save with cleanup
   useEffect(() => {
-    // wait 300ms before saving if count changes againcancel previous timeout
+    // wait 300ms before saving if count changes again cancel previous timeout
     const timer = setTimeout(() => {
       localStorage.setItem("count", String(count));
     }, 300);
 
-    // cleanup cancel pending save if count change quickly
+    // cleanup cancel pending save if count changes quickly
     return () => clearTimeout(timer);
   }, [count]);
+
+  // keyboard event listeners for ArrowUp and ArrowDown
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "ArrowUp") {
+        event.preventDefault();
+        increment();
+      } else if (event.key === "ArrowDown") {
+        event.preventDefault();
+        decrement();
+      }
+    };
+
+    // add event listener when component mounts
+    document.addEventListener("keydown", handleKeyDown);
+
+    // cleanup event listener when component unmounts
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []); // empty dependency array ensures it runs only once
 
   return (
     <div className="min-h-screen bg-neutral-100 text-neutral-800 flex items-center justify-center p-6">
@@ -68,9 +89,11 @@ const AdvancedCounter: React.FC = () => {
             Reset
           </button>
         </div>
+
         <p className="mb-4">
           Step Value: <span className="font-semibold">{step}</span>
         </p>
+
         {/* saved status placeholder */}
         <p className="italic text-sm text-green-600 mb-6">Changes saved.</p>
 
@@ -79,7 +102,7 @@ const AdvancedCounter: React.FC = () => {
         </h3>
         <p className="text-left mt-1">{history.join(", ")}</p>
 
-        {/* keybord hint */}
+        {/* keyboard hint */}
         <p className="text-xs mt-6 text-neutral-400">
           Use ArrowUp to increment and ArrowDown to decrement.
         </p>

@@ -22,10 +22,10 @@ Build a React application that features an advanced counter. The specific featur
 
 ### Keyboard Event Listeners:
 
-- [ ] Allow the user to increment the count by pressing the “ArrowUp” key.
-- [ ] Allow the user to decrement the count by pressing the “ArrowDown” key.
-- [ ] Use useEffect to add and remove these event listeners to the document.
-- [ ] Ensure event listeners are cleaned up when the component unmounts or is no longer active.
+- [x] Allow the user to increment the count by pressing the “ArrowUp” key.
+- [x] Allow the user to decrement the count by pressing the “ArrowDown” key.
+- [x] Use useEffect to add and remove these event listeners to the document.
+- [x] Ensure event listeners are cleaned up when the component unmounts or is no longer active.
 
 ### Reset Mechanism:
 
