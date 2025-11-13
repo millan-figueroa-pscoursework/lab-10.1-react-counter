@@ -31,9 +31,15 @@ const AdvancedCounter: React.FC = () => {
     });
   };
 
-  // save current count to localStorage whenever it changes
+  // debounced auto-save with cleanup
   useEffect(() => {
-    localStorage.setItem("count", String(count));
+    // wait 300ms before saving if count changes againcancel previous timeout
+    const timer = setTimeout(() => {
+      localStorage.setItem("count", String(count));
+    }, 300);
+
+    // cleanup cancel pending save if count change quickly
+    return () => clearTimeout(timer);
   }, [count]);
 
   return (

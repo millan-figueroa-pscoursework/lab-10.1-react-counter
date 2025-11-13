@@ -12,13 +12,13 @@ Build a React application that features an advanced counter. The specific featur
 
 ### History Tracking:
 
-- [ ] Keep a history of all count values. Every time the count changes, add the new count to an array of previous counts.
-- [ ] Display this history list to the user (e.g., “Previous counts: 0, 1, 2, 1, 2, 3”).
+- [x] Keep a history of all count values. Every time the count changes, add the new count to an array of previous counts.
+- [x] Display this history list to the user (e.g., “Previous counts: 0, 1, 2, 1, 2, 3”).
 
 ### Auto-Save Functionality:
 
-- [ ] Use useEffect to save the current count to local storage whenever it changes.
-- [ ] Ensure you handle potential race conditions or cleanup if the count changes again before the “save” completes. (Hint: cleanup function in useEffect).
+- [x] Use useEffect to save the current count to local storage whenever it changes.
+- [x] Ensure you handle potential race conditions or cleanup if the count changes again before the “save” completes. (Hint: cleanup function in useEffect).
 
 ### Keyboard Event Listeners:
 
