@@ -7,8 +7,8 @@ const AdvancedCounter: React.FC = () => {
     return saved ? Number(saved) : 0;
   });
 
-  // step value for now fixed at 1
-  const [step] = useState<number>(1);
+  // step value is now editable by the user
+  const [step, setStep] = useState<number>(1);
 
   // history array to keep track of count values
   const [history, setHistory] = useState<number[]>([0]);
@@ -49,6 +49,7 @@ const AdvancedCounter: React.FC = () => {
   }, [count]);
 
   // keyboard event listeners for ArrowUp and ArrowDown
+  // include step so the handler always uses latest step value
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "ArrowUp") {
@@ -67,7 +68,7 @@ const AdvancedCounter: React.FC = () => {
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
     };
-  }, []); // empty dependency array ensures it runs only once
+  }, [step]); // re-bind whenstep changes so it dont get stale
 
   return (
     <div className="min-h-screen bg-neutral-100 text-neutral-800 flex items-center justify-center p-6">
@@ -99,9 +100,21 @@ const AdvancedCounter: React.FC = () => {
           </button>
         </div>
 
-        <p className="mb-4">
-          Step Value: <span className="font-semibold">{step}</span>
-        </p>
+        {/* Step input */}
+        <div className="mb-4 flex items-center justify-center gap-3">
+          <span>Step Value:</span>
+          <input
+            type="number"
+            min={1}
+            value={step}
+            onChange={(e) => {
+              const val = Number(e.target.value);
+              // min of 1 empty > 1
+              setStep(!Number.isNaN(val) && val >= 1 ? val : 1);
+            }}
+            className="w-20 text-center border border-neutral-400 rounded px-2 py-1"
+          />
+        </div>
 
         {/* saved status placeholder */}
         <p className="italic text-sm text-green-600 mb-6">Changes saved.</p>
