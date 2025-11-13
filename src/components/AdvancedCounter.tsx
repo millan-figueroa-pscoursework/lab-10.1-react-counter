@@ -43,18 +43,47 @@ const AdvancedCounter: React.FC = () => {
   }, [count]);
 
   return (
-    <div>
-      <h1>Counter</h1>
-      <p>Current Count: {count}</p>
-      <div>
-        <button onClick={decrement}>Decrement</button>
-        <button onClick={increment}>Increment</button>
-      </div>
+    <div className="min-h-screen bg-neutral-100 text-neutral-800 flex items-center justify-center p-6">
+      <div className="border-2 border-neutral-400 rounded-xl p-8 bg-neutral-100 max-w-md w-full text-center">
+        {/* Display current count */}
+        <p className="text-4xl text-gray-300 mb-6 font-semibold">
+          Current Count: <span className="text-green-600">{count}</span>
+        </p>
 
-      {/* Display count history */}
-      <h3>Count History:</h3>
-      {/* .join() method converts the array into a comma-separated string */}
-      <p>{history.join(", ")}</p>
+        {/* Buttons */}
+        <div className="flex justify-center gap-6 my-10">
+          <button
+            onClick={decrement}
+            className="px-4 py-2 rounded border text-white border-neutral-300 bg-neutral-600 hover:bg-neutral-500"
+          >
+            Decrement
+          </button>
+          <button
+            onClick={increment}
+            className="px-4 py-2 rounded border text-white border-neutral-300 bg-neutral-600 hover:bg-neutral-500"
+          >
+            Increment
+          </button>
+          <button className="text-white px-4 py-2 rounded bg-green-700 hover:bg-green-600">
+            Reset
+          </button>
+        </div>
+        <p className="mb-4">
+          Step Value: <span className="font-semibold">{step}</span>
+        </p>
+        {/* saved status placeholder */}
+        <p className="italic text-sm text-green-600 mb-6">Changes saved.</p>
+
+        <h3 className="text-left font-semibold border-t border-neutral-700 pt-4">
+          Count History:
+        </h3>
+        <p className="text-left mt-1">{history.join(", ")}</p>
+
+        {/* keybord hint */}
+        <p className="text-xs mt-6 text-neutral-400">
+          Use ArrowUp to increment and ArrowDown to decrement.
+        </p>
+      </div>
     </div>
   );
 };
