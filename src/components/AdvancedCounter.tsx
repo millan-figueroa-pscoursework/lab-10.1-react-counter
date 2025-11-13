@@ -17,7 +17,8 @@ const AdvancedCounter: React.FC = () => {
   const increment = () => {
     setCount((prev) => {
       const next = prev + step;
-      setHistory((h) => [...h, next]);
+      //only add the new count to history if it’s not the same as the last one to prevent duplicates
+      setHistory((h) => (h[h.length - 1] === next ? h : [...h, next]));
       return next;
     });
   };
@@ -26,7 +27,8 @@ const AdvancedCounter: React.FC = () => {
   const decrement = () => {
     setCount((prev) => {
       const next = prev - step;
-      setHistory((h) => [...h, next]);
+      // checks if that last value equals the new count
+      setHistory((h) => (h[h.length - 1] === next ? h : [...h, next]));
       return next;
     });
   };

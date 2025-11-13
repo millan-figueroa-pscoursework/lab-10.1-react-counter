@@ -34,14 +34,14 @@ Build a React application that features an advanced counter. The specific featur
 
 ### Step Input:
 
-- [ ] Add an input field where the user can define a custom “step” value.
-- [ ] The increment and decrement buttons should then use this step value instead of 1.
-- [ ] Consider how changes to the step value affect the counter and its history.
+- [x] Add an input field where the user can define a custom “step” value.
+- [x] The increment and decrement buttons should then use this step value instead of 1.
+- [x] Consider how changes to the step value affect the counter and its history.
 
 ## Implementation Guidelines
 
-- [ ] Create a new React component for your counter (e.g., AdvancedCounter.tsx).
-- [ ] Use useState to manage the current count, history array, and any other necessary local state.
-- [ ] Use useEffect for side effects like auto-saving and adding/removing keyboard event listeners.
-- [ ] Pay close attention to the dependency arrays in your useEffect hooks to control when they re-run.
-- [ ] Ensure all useEffect hooks that set up subscriptions or event listeners have proper cleanup functions.
+- [x] Create a new React component for your counter (e.g., AdvancedCounter.tsx).
+- [x] Use useState to manage the current count, history array, and any other necessary local state.
+- [x] Use useEffect for side effects like auto-saving and adding/removing keyboard event listeners.
+- [x] Pay close attention to the dependency arrays in your useEffect hooks to control when they re-run.
+- [x] Ensure all useEffect hooks that set up subscriptions or event listeners have proper cleanup functions.
