@@ -29,8 +29,8 @@ Build a React application that features an advanced counter. The specific featur
 
 ### Reset Mechanism:
 
-- [ ] Implement a button to reset the count back to 0.
-- [ ] This reset should also clear the tracked history of counts.
+- [x] Implement a button to reset the count back to 0.
+- [x] This reset should also clear the tracked history of counts.
 
 ### Step Input:
 

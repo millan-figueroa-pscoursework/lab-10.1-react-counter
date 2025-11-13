@@ -31,6 +31,12 @@ const AdvancedCounter: React.FC = () => {
     });
   };
 
+  // reset function sets count back to 0 and clears history
+  const reset = () => {
+    setCount(0);
+    setHistory([0]);
+  };
+
   // debounced auto-save with cleanup
   useEffect(() => {
     // wait 300ms before saving if count changes again cancel previous timeout
@@ -85,7 +91,10 @@ const AdvancedCounter: React.FC = () => {
           >
             Increment
           </button>
-          <button className="text-white px-4 py-2 rounded bg-green-700 hover:bg-green-600">
+          <button
+            onClick={reset}
+            className="text-white px-4 py-2 rounded bg-green-700 hover:bg-green-600"
+          >
             Reset
           </button>
         </div>
