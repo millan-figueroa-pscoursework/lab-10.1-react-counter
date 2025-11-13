@@ -4,9 +4,9 @@ Build a React application that features an advanced counter. The specific featur
 
 ## Core Counter Functionality
 
-- [ ] Display Current Count: Show the current count, initialized to 0.
-- [ ] Increment Button: A button to increase the count by 1.
-- [ ] Decrement Button: A button to decrease the count by 1.
+- [x] Display Current Count: Show the current count, initialized to 0.
+- [x] Increment Button: A button to increase the count by 1.
+- [x] Decrement Button: A button to decrease the count by 1.
 
 ## Advanced Features
 
